@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <p style="color: #0f0;">
+        Lorem ipsum, molestias! Eos facere totam esse, magni vero perspiciatis commodi veritatis dicta dignissimos! Cum libero eos velit ad! Consequuntur molestias exercitationem rerum repellat.
+        </p>
+        <p>
+            Click <span id="register" style="color: #FFF; background-color: #0f0; padding: 10px;">here</span>to register
+        </p>
+    </div>
+
+    <div id="main2">
+        <p style="color: #f00;">
+        Lorem ipsum, molestias! Eos facere totam esse, magni vero perspiciatis commodi veritatis dicta dignissimos! Cum libero eos velit ad! Consequuntur molestias exercitationem rerum repellat.
+        </p>
+        <p>
+            Click <span id="login" style="color: #FFF; background-color: #f00; padding: 10px;">here</span>to login
+        </p>
+    </div>
+    <p class="topbtn">Top</p>
+</body>
+<script>
+
+    setInterval(function() {
+        const time = new Date();
+        document.getElementById("demo").innerText = time.toLocaleDateString()
+    }, 1000);
+
+
+    const main = document.getElementById("main");
+    const main2 = document.getElementById("main2");
+    const register = document.getElementById("register");
+    const login = document.getElementById("login");
+
+    main2.style.display = "none"
+
+    register.addEventListener("click", function () {
+        main2.style.display = "block";
+        main.style.display = "none";
+    });
+
+    login.addEventListener("click", function () {
+        main.style.display = "block";
+        main2.style.display = "none";
+    });
+</script>
+</html>z

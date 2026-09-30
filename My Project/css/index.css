@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    display: unset;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+}
+.select{
+    transform: translateX(500px);
+    margin: 10px;
+}
+.sidebar{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.sidebar-logo{
+    text-decoration: none;
+}
+.sidebar-logo .logo-mark{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-logo .logo-mark .logo-title{
+    font-size: 100px;
+    font-weight: 1000;
+    color: blue;
+    letter-spacing: 0.5px;
+}
+.sidebar-logo .logo-mark .logo-tag{
+    font-size: 20px;
+    font-weight: 700;
+    color: slateblue;
+    letter-spacing: 0.3px;
+}
+.container{
+    background-color: blue;
+    color: white;
+    height: 250px;
+    text-align: center;
+}
+.container h1{
+    transform: translateY(110px);
+    font-size: 27px;
+}
+.container h3{
+    transform: translateY(130px);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.container .second{
+    background-color: whitesmoke;
+    transform: translateY(50px);
+    height: 400px;
+    width: 40%;
+    margin-left: 32%;
+    border-radius: 30px;
+}
+.second .text{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    transform: translateY(-80px);
+}
+.second .text h1{
+    font-size: 26px;
+    font-weight: 300;
+}
+.second .list{
+    transform: translateY(30px);
+    padding: 40px 30px;
+    border-radius: 80px;
+}
+.second .list-third{
+    transform: translateY(30px);
+    color: slategrey;
+}
+.second .link{
+    transform: translateY(60px);
+    align-items: center;
+    text-decoration: none;
+}
+.second .create-link{
+    transform: translateY(100px);
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: violet;
+            height: 100vh;
+        }
+        img {
+            width: 100vh;
+            animation: pre infinite 3s;
+        }
+        @keyframes pre {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="Image/istockhouse.jpg" alt="">
+    </div>
+</body>
+<script>
+    setTimeout(function() {
+        window.location.href = "demo.html";
+    }, 5000);
+</script>
+</html>

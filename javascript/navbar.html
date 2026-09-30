@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul class="large-nav">
+            <li><a href="#">Home</a></li>
+            <li class="hide"><a href="#">Blog</a></li>
+            <li class="hide"><a href="#">Product</a></li>
+            <li class="hide"><a href="#">About</a></li>
+            <li class="hide"><a href="#">Forum</a></li>
+            <li class="hide"><a href="#">Login</a></li>
+            <li class="menu-btn"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+
+        <ul class="sidebar">
+            <li class="xbtn"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+</body>
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const xBtn = document.querySelector(".xbtn");
+
+    menuBtn.addEventListener("click", function() {
+        sidebar.style.display ="block";
+    });
+
+    xBtn.addEventListener("click", () => {
+        sidebar.style.display = "none";
+    });
+</script>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: blue;box-sizing: border-box;">
+    <center>
+        <form style="background-color: rgb(223, 212, 227); width: 500px; height:300px; margin: 140px auto; border-radius: 30px; border-color: 3px solid rgb(0, 0, 0);" action="">
+            <div >
+            <div>
+                <label for="">Username</label>
+                <input type="text" name="" id="username">
+            </div>
+            <br>
+            <div>
+                <label for="">Email</label>
+                <input type="mail" name="" id="email">
+            </div>
+            <br>
+            <div>
+                <label for="">Password</label>
+                <input type="password" name="" id="password">
+                <span id="show1" style="border: 1px solid; padding: 1px 5px;">show</span>
+            </div>
+            <br>
+            <div>
+                <label for="">Confirm Password</label>
+                <input type="password" name="" id="con-password">
+                <span id="show2" style="border: 1px solid; padding: 1px 5px;">show</span>
+            </div>
+            <br>
+            <div id="msg" style="color: #f00;"></div>
+            <button id="submit">Submit</button>
+            </div>
+        </form>
+    </center>
+</body>
+<script>
+    const form = document.querySelector("form");
+    if (form) {
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const pass = document.getElementById("password").value;
+            const conpass = document.getElementById("con-password").value;
+            const msg = document.getElementById("msg");
+            const btn = document.getElementById("submit");
+
+            btn.disabled =true;
+            btn.innerText ="processing...";
+
+            if (!username) {
+                msg.innerText = "Username is required";
+                btn.innerText = "Submit";
+                btn.disabled = false;
+                return;
+            }
+
+            if (email == "" || email == null) {
+                msg.innerText = "email is required";
+                btn.innerText = "Submit";
+                btn.disabled = false;
+                return;
+            }
+
+            if (email.indexOf("@") < 0) {
+                msg.innerText = "Please enter a valid email address";
+                btn.innerText = "Submit";
+                btn.disabled = false;
+                return;
+            }
+
+            if (!pass) {
+                msg.innerText = "Password is required";
+                btn.innerText = "Submit";
+                btn.disabled = false;
+                return;
+            }
+
+            if (!conpass) {
+                msg.innerText = "confirm password is required";
+                btn.innerText = "Submit";
+                btn.disabled = false;
+                return;
+            }
+
+            if (pass !== conpass) {
+                msg.innerText = "Password and confirm password do not match";
+                btn.innerText = "Submit";
+                btn.disabled = false;
+                return;
+            }
+
+            if (pass.length < 8 && conpass.length < 8) {
+                msg.innerText = "Passwords must be at least 8 characters";
+                btn.innerText = "Submit";
+                btn.disabled = false;
+                return;
+            }
+
+            if (!username && !email && !pass && !conpass) {
+                msg.innerText = "All fields are required";
+                btn.innerText = "Submit";
+                btn.disabled = false;
+                return;
+            }
+
+            window.location.href = "demo.html";
+        });
+        
+        // Show and Hide Password //
+        const show1 =document.getElementById("show1");
+        const show2 =document.getElementById("show2");
+        const password =document.getElementById("password");
+        const conpassword =document.getElementById("con-password");
+
+        show1.addEventListener("click", function() {
+            const check = password.getAttribute("type");
+            if (check == "password") {
+                password.setAttribute("type", "text");
+                show1.innerText = "hide";
+            } else {
+                password.setAttribute("type", "password");
+                show1.innerText = "show";
+            }
+        })
+
+        show2.addEventListener("click", () => {
+            const check = conpassword.getAttribute("type");
+            if (check == "password") {
+                password.setAttribute("type", "text");
+                show2.innerText = "hide";
+            } else {
+                conpassword.setAttribute("type", "password");
+                show2.innerText = "show";
+            }
+        })
+    }
+</script>
+</html>
